@@ -18,5 +18,27 @@ with open("words.txt") as f:
                     words.append(line)
 
 
+#print all the words found
+words.sort(key=len)
+curL = 4
+panagrams = []
+print('4 Letter Words: ')
+
+for word in words:
+    if set(word) >= set(lts):
+        panagrams.append(word)
+
+    elif len(word) == curL:
+        print(word)
+    else:
+        curL = len(word)
+        print(curL, 'Letter Words: ')
+        print(word)
+
+print('PANAGRAMS: ')
+for panagram in panagrams:
+
+    print(panagram)
+        
 
 
