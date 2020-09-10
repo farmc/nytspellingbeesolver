@@ -1,10 +1,20 @@
 import sys
-import re
 
-#grab letters and seperate
+#read input
+errmsg = "Usage: python3 solver.py { 6 lowercase and 1 uppercase letter no spaces }"
+if (len(sys.argv) != 2):
+    sys.exit(errmsg)
+
 allLetters = sys.argv[1]
+
 lts = ''.join([x for x in allLetters if x.islower()])
+if (len(lts) != 6):
+    sys.exit(errmsg)
+
 clt = ''.join([x for x in allLetters if x.isupper()])
+if (len(clt) != 1):
+    sys.exit(errmsg)
+
 clt = clt.lower()
 
 #search
